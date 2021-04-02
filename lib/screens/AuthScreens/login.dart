@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whackiest/appscreens/homepage.dart';
-//import 'package:whackiest/screens/AppScreens/homepage.dart';
+
+import 'package:whackiest/screens/AppScreens/homepage.dart';
 import 'package:whackiest/services/authService.dart';
 
 class Login extends StatefulWidget {

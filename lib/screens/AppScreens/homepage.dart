@@ -5,6 +5,7 @@ import 'package:whackiest/screens/AppScreens/log.dart';
 import 'package:whackiest/screens/AppScreens/music.dart';
 import 'package:whackiest/screens/AppScreens/news.dart';
 import 'package:whackiest/screens/AppScreens/sleep.dart';
+//import 'package:kf_drawer/kf_drawer.dart';
 
 //import 'package:flurry_navigation/flurry_navigation.dart';
 
