@@ -127,6 +127,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.1"
+  flurry_navigation:
+    dependency: "direct main"
+    description:
+      name: flurry_navigation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -212,6 +219,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.0"
+  kf_drawer:
+    dependency: "direct main"
+    description:
+      name: kf_drawer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.2"
   matcher:
     dependency: transitive
     description:

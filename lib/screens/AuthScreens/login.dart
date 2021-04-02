@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whackiest/screens/AppScreens/homepage.dart';
+import 'package:whackiest/appscreens/homepage.dart';
+//import 'package:whackiest/screens/AppScreens/homepage.dart';
 import 'package:whackiest/services/authService.dart';
 
 class Login extends StatefulWidget {
@@ -40,7 +41,7 @@ class _LoginState extends State<Login> {
                   await _auth.googleSignin().then((value) {
                     if (value.emailVerified)
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (_) => MyHomePage()));
+                          MaterialPageRoute(builder: (_) => Homepage()));
                   });
                 },
                 child: Text("Sign up using google"),
@@ -65,7 +66,7 @@ class _LoginState extends State<Login> {
                   await _submit().then((value) {
                     if (value != null)
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (_) => MyHomePage()));
+                          MaterialPageRoute(builder: (_) => Homepage()));
                   });
                 },
                 child: Text("verify"),
@@ -94,7 +95,7 @@ class _LoginState extends State<Login> {
       UserCredential userCredential =
           await _auth.signInWithCredential(credential);
       Navigator.pop(context);
-      Navigator.push(context, MaterialPageRoute(builder: (_) => MyHomePage()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => Homepage()));
       return userCredential.user;
     };
 
@@ -134,8 +135,8 @@ class _LoginState extends State<Login> {
                   User user = FirebaseAuth.instance.currentUser;
                   if (user != null) {
                     Navigator.pop(context);
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (_) => MyHomePage()));
+                    Navigator.pushReplacement(
+                        context, MaterialPageRoute(builder: (_) => Homepage()));
                     return user;
                   } else {
                     showAboutDialog(context: context, children: [
@@ -185,7 +186,7 @@ class _LoginState extends State<Login> {
         .then((user) => Navigator.push(
             //Welcome(user.user.uid.toString()),
             context,
-            MaterialPageRoute(builder: (_) => MyHomePage())))
+            MaterialPageRoute(builder: (_) => Homepage())))
         .catchError((e) => print("Error : " + e));
   }
 }
