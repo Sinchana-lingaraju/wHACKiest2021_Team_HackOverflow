@@ -56,7 +56,7 @@ class _NewsState extends State<News> {
                   return Card(
                     elevation: 10,
                     child: Container(
-                        height: 500,
+                        height: 470,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20)),
@@ -118,7 +118,7 @@ class _NewsState extends State<News> {
                     height: 50,
                   ),
                   Text(
-                    "Fetching data...",
+                    "Fetching news...",
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,

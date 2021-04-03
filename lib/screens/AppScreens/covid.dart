@@ -44,6 +44,7 @@ class Covid extends StatelessWidget {
           padding: const EdgeInsets.all(40.0),
           child: Text(
             "We know that these are tough times, but we will get through it together",
+            style: TextStyle(fontSize: 20),
             textAlign: TextAlign.center,
           ),
         ),
@@ -84,11 +85,11 @@ class Covid extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Text(
-            "COVID 19 VACINATION CENTERS",
+            "COVID 19 VACINATION CENTERS NEAR YOU",
             style: TextStyle(
                 color: Colors.purpleAccent,
                 fontWeight: FontWeight.w500,
-                fontSize: 20),
+                fontSize: 18),
             textAlign: TextAlign.center,
           ),
         ),

@@ -24,6 +24,7 @@ class Music extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -56,7 +57,10 @@ class Music extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
                   'Play a random song!!',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontStyle: FontStyle.italic),
                   textAlign: TextAlign.center,
                 ),
               ),
