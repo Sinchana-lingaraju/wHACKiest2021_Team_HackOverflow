@@ -26,6 +26,7 @@ class _LogState extends State<Log> {
     return ChangeNotifierProvider.value(
         value: MoodCard(),
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           home: StartPage(),
           routes: {
             '/home_screen': (ctx) => HomeScreen(),

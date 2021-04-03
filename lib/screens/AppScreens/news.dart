@@ -51,59 +51,64 @@ class _NewsState extends State<News> {
           if (snapshot.hasData) {
             return Container(
               child: ListView.builder(
+                shrinkWrap: true,
                 itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Card(
                     elevation: 10,
-                    child: Container(
-                        height: 500,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        margin:
-                            EdgeInsets.symmetric(vertical: 4, horizontal: 6),
-                        child: Column(
-                          children: [
-                            Image(
-                                image: NetworkImage(
-                                    snapshot.data[index].urlImage)),
-                            SizedBox(height: 20),
-                            Text(
-                              snapshot.data[index].title,
-                              style: TextStyle(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                          // height: 500,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          margin:
+                              EdgeInsets.symmetric(vertical: 4, horizontal: 6),
+                          child: Column(
+                            children: [
+                              Image(
+                                  image: NetworkImage(
+                                      snapshot.data[index].urlImage)),
+                              SizedBox(height: 20),
+                              Text(
+                                snapshot.data[index].title,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: 6),
+                              Text(
+                                snapshot.data[index].author,
+                                style: TextStyle(
+                                  color: Colors.black87,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                snapshot.data[index].description,
+                                style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(height: 6),
-                            Text(
-                              snapshot.data[index].author,
-                              style: TextStyle(
-                                color: Colors.black87,
-                                fontSize: 16,
+                                  fontSize: 16,
+                                ),
                               ),
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              snapshot.data[index].description,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                              ),
-                            ),
-                            SizedBox(height: 6),
-                            TextButton(
-                                onPressed: () async {
-                                  var url = snapshot.data[index].url;
-                                  if (await canLaunch(url)) {
-                                    await launch(url, forceSafariVC: false);
-                                  } else {
-                                    throw 'Could not launch $url';
-                                  }
-                                },
-                                child: Text("Read more..."))
-                          ],
-                        )),
+                              SizedBox(height: 6),
+                              TextButton(
+                                  onPressed: () async {
+                                    var url = snapshot.data[index].url;
+                                    if (await canLaunch(url)) {
+                                      await launch(url, forceSafariVC: false);
+                                    } else {
+                                      throw 'Could not launch $url';
+                                    }
+                                  },
+                                  child: Text("Read more..."))
+                            ],
+                          )),
+                    ),
                   );
                 },
               ),
@@ -118,7 +123,7 @@ class _NewsState extends State<News> {
                     height: 50,
                   ),
                   Text(
-                    "Fetching data...",
+                    "Fetching news...",
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
