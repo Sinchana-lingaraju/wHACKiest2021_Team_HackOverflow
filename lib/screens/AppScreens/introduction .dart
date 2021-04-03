@@ -42,8 +42,9 @@ class _IntroductionState extends State<Introduction> {
     );
   }
 
-  Widget _buildImage(String assetName, [double width = 350]) {
-    return Image.asset('assets/$assetName', width: width);
+  Widget _buildImage(String assetName,
+      [double width = 350, double height = 350]) {
+    return Image.asset('assets/$assetName', width: 250, height: 258);
   }
 
   @override
@@ -86,7 +87,9 @@ class _IntroductionState extends State<Introduction> {
           title: "BINAURAL BEATS",
           body:
               "Regulate your sleep and wakefulness by listening to a range of binaural beats. Helps in getting into a particular headspace. Be it creative and relaxed, or alert and wakeful.",
-          image: _buildImage('owl.png'),
+          image: _buildImage(
+            'owl.png',
+          ),
           decoration: pageDecoration,
         ),
         PageViewModel(

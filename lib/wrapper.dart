@@ -18,10 +18,9 @@ class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
     User user = Provider.of(context);
-    if (user == null)
-      return Login();
-    else {
-      return intro();
-    }
+    // if (user == null)
+    //   return Login();
+    // else {
+    return intro();
   }
 }

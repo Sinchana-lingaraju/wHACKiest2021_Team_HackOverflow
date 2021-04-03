@@ -108,6 +108,7 @@ flutter:
     - assets/sleeping.png
     - assets/sports.png
     - assets/dull.png
+    - assets/music.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

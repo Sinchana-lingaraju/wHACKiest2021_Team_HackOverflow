@@ -86,6 +86,10 @@ class _SleepState extends State<Sleep> {
                           child: Text(
                               "Alpha beats(8-12Hz) will slow down your mind and slowly put you into a relaxed, loosened state.Connect your headphones and set the volume to a comfortable level."),
                         ),
+                        CircleAvatar(
+                          backgroundImage: ExactAssetImage('assets/alpha.png'),
+                          radius: 50,
+                        ),
                       ],
                     )));
               },
@@ -127,6 +131,10 @@ class _SleepState extends State<Sleep> {
                           child: Text(
                               "Beta beats (14-30Hz) helps increase situational awareness, alertness, and overall happiness and well-being.Connect your headphones and set the volume to a comfortable level."),
                         ),
+                        CircleAvatar(
+                          backgroundImage: ExactAssetImage('assets/beta.png'),
+                          radius: 50,
+                        )
                       ],
                     )));
               },
@@ -170,6 +178,12 @@ class _SleepState extends State<Sleep> {
                           padding: const EdgeInsets.all(30.0),
                           child: Text(
                               "Theta beats(4.8Hz) are suitable for power naps, as they trigger REM sleep.Connect your headphones and set the volume to a comfortable level."),
+                        ),
+                        CircleAvatar(
+                          backgroundImage: ExactAssetImage(
+                            'assets/theta.png',
+                          ),
+                          radius: 50,
                         ),
                       ],
                     )));
@@ -258,6 +272,10 @@ class _SleepState extends State<Sleep> {
                           padding: const EdgeInsets.all(30.0),
                           child: Text(
                               "Delta beats(0.1-4Hz) will lull you into a deep, comfortable sleep, and are good for healing.Connect your headphones and set the volume to a comfortable level."),
+                        ),
+                        CircleAvatar(
+                          backgroundImage: ExactAssetImage('assets/delta.png'),
+                          radius: 50,
                         ),
                       ],
                     )));
