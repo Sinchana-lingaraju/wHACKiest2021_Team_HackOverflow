@@ -125,7 +125,7 @@ class _NewsState extends State<News> {
                   Text(
                     "Fetching news...",
                     style: TextStyle(
-                      fontSize: 28,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       // shadows: [
                       //   Shadow(

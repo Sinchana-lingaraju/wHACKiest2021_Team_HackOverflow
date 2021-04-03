@@ -20,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ? Center(child: CircularProgressIndicator())
         : Scaffold(
             appBar: AppBar(
-              // title: Text('Your Moods'),
               backgroundColor: Colors.purpleAccent,
               actions: <Widget>[
                 IconButton(
