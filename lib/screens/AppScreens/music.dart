@@ -30,6 +30,7 @@ class _MusicState extends State<Music> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body:
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [

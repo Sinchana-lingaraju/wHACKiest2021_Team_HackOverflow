@@ -62,4 +62,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-auth'
     implementation "androidx.browser:browser:1.2.0"
+    implementation "com.google.firebase:firebase-storage:17.0.0"
 }

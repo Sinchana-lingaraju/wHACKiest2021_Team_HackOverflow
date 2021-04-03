@@ -22,7 +22,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  int selectedIndex = 3;
+  int selectedIndex = 1;
 
   void onChangeTab(int index) {
     selectedIndex = index;
