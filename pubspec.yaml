@@ -38,6 +38,14 @@ dependencies:
   audioplayers: ^0.18.3
   syncfusion_flutter_sliders: ^19.1.54-beta
   firebase_storage: ^8.0.1
+  introduction_screen: ^2.1.0
+  sqflite: ^2.0.0+3
+  charts_flutter: ^0.10.0
+  pie_chart: ^5.0.0
+  path_provider: ^2.0.1
+  datetime_picker_formfield: ^1.0.0
+  path: ^1.6.2
+  url_launcher: ^6.0.3
   
 
   # The following adds the Cupertino Icons font to your application.
@@ -63,6 +71,15 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/logo.png
+    - assets/diary.png
+    - assets/music.png
+    - assets/newspaper.png
+    - assets/owl.png
+    - assets/virus.png
+    - assets/stnks.png
+    - assets/yash.jpeg
+    - assets/sinchana.jpeg
+    - assets/ishan.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
