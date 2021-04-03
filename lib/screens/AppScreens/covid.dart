@@ -93,6 +93,7 @@ class Covid extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
+
         FloatingActionButton(
           backgroundColor: Colors.white,
           onPressed: () {

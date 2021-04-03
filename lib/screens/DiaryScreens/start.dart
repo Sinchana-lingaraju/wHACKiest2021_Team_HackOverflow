@@ -318,10 +318,10 @@ class _StartPageState extends State<StartPage> {
                 end: Alignment.bottomLeft,
                 colors: [Colors.purpleAccent, Colors.deepPurpleAccent],
               ),
-              border: Border.all(
-                width: 1.00,
-                color: Colors.deepPurpleAccent,
-              ),
+              // border: Border.all(
+              //   width: 1.00,
+              //   color: Colors.purpleAccent,
+              // ),
               borderRadius: BorderRadius.circular(19.00),
             ),
           ),

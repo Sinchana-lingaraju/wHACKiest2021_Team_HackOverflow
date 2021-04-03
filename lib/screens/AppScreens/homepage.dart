@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:jumping_bottom_nav_bar/jumping_bottom_nav_bar.dart';
 import 'package:whackiest/screens/AppScreens/about.dart';
 import 'package:whackiest/screens/AppScreens/covid.dart';
+import 'package:whackiest/screens/AppScreens/introduction%20.dart';
 import 'package:whackiest/screens/AppScreens/log.dart';
 import 'package:whackiest/screens/AppScreens/music.dart';
 import 'package:whackiest/screens/AppScreens/news.dart';
@@ -21,7 +22,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  int selectedIndex = 1;
+  int selectedIndex = 3;
 
   void onChangeTab(int index) {
     selectedIndex = index;
@@ -57,12 +58,25 @@ class _HomepageState extends State<Homepage> {
               //   thickness: 1,
               //   color: Colors.grey,
               // ),
+
               ListTile(
                   title: Text('VOLUNTEER'),
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ChatPage()),
+                    );
+                  }),
+              Divider(
+                thickness: 1,
+                color: Colors.grey,
+              ),
+              ListTile(
+                  title: Text('HELP'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => intro()),
                     );
                   }),
               Divider(
