@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 class NewsData {
   String author;
@@ -52,21 +53,58 @@ class _NewsState extends State<News> {
               child: ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                      height: 400,
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(20)),
-                      margin: EdgeInsets.symmetric(vertical: 4, horizontal: 6),
-                      child: Column(
-                        children: [
-                          // NetworkImage(snapshot.data[index].urlImage),
-                          Text(
-                            snapshot.data[index].author,
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
-                      ));
+                  return Card(
+                    elevation: 10,
+                    child: Container(
+                        height: 500,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20)),
+                        margin:
+                            EdgeInsets.symmetric(vertical: 4, horizontal: 6),
+                        child: Column(
+                          children: [
+                            Image(
+                                image: NetworkImage(
+                                    snapshot.data[index].urlImage)),
+                            SizedBox(height: 20),
+                            Text(
+                              snapshot.data[index].title,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 6),
+                            Text(
+                              snapshot.data[index].author,
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 16,
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              snapshot.data[index].description,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            ),
+                            SizedBox(height: 6),
+                            TextButton(
+                                onPressed: () async {
+                                  var url = snapshot.data[index].url;
+                                  if (await canLaunch(url)) {
+                                    await launch(url, forceSafariVC: false);
+                                  } else {
+                                    throw 'Could not launch $url';
+                                  }
+                                },
+                                child: Text("Read more..."))
+                          ],
+                        )),
+                  );
                 },
               ),
             );
@@ -82,7 +120,7 @@ class _NewsState extends State<News> {
                   Text(
                     "Fetching data...",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 28,
                       fontWeight: FontWeight.bold,
                       // shadows: [
                       //   Shadow(

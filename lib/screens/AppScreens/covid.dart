@@ -41,9 +41,11 @@ class Covid extends StatelessWidget {
             image: NetworkImage(
                 'https://media1.tenor.com/images/4b5e8155eb7d8397b26b0d156c39898c/tenor.gif?itemid=4145835')),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(40.0),
           child: Text(
-              "We know that these are tough times, but we will get through it together"),
+            "We know that these are tough times, but we will get through it together",
+            textAlign: TextAlign.center,
+          ),
         ),
         // FutureBuilder(
         //   future: _covidData(),
@@ -79,13 +81,24 @@ class Covid extends StatelessWidget {
         //     }
         //   },
         // ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text(
+            "COVID 19 VACINATION CENTERS",
+            style: TextStyle(
+                color: Colors.purpleAccent,
+                fontWeight: FontWeight.w500,
+                fontSize: 20),
+            textAlign: TextAlign.center,
+          ),
+        ),
         FloatingActionButton(
           backgroundColor: Colors.white,
           onPressed: () {
             MapsLauncher.launchQuery('Covid 19 Vaccine');
           },
           child: Icon(
-            Icons.map_outlined,
+            Icons.location_on,
             color: Colors.purpleAccent,
           ),
         ),
