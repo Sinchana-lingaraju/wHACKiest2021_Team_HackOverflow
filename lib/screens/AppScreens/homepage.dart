@@ -6,10 +6,11 @@ import 'package:whackiest/screens/AppScreens/covid.dart';
 import 'package:whackiest/screens/AppScreens/log.dart';
 import 'package:whackiest/screens/AppScreens/music.dart';
 import 'package:whackiest/screens/AppScreens/news.dart';
-import 'package:whackiest/screens/AppScreens/progress.dart';
+
 import 'package:whackiest/screens/AppScreens/sleep.dart';
 import 'package:whackiest/screens/AppScreens/volunteer.dart';
 import 'package:whackiest/screens/AuthScreens/login.dart';
+import 'package:whackiest/screens/DiaryScreens/chart.dart';
 import 'package:whackiest/services/authService.dart';
 
 class Homepage extends StatefulWidget {
@@ -48,24 +49,20 @@ class _HomepageState extends State<Homepage> {
                   color: Colors.white,
                 ),
               ),
-              ListTile(
-                  title: Text('PROGRESS'),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => progress()),
-                    );
-                  }),
-              Divider(
-                thickness: 1,
-                color: Colors.grey,
-              ),
+              // ListTile(
+              //   title: Text('PROGRESS'),
+              //   onTap: () => Navigator.of(context).pushNamed('/chart'),
+              // ),
+              // Divider(
+              //   thickness: 1,
+              //   color: Colors.grey,
+              // ),
               ListTile(
                   title: Text('VOLUNTEER'),
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Volunteer()),
+                      MaterialPageRoute(builder: (context) => ChatPage()),
                     );
                   }),
               Divider(
@@ -131,7 +128,7 @@ class _HomepageState extends State<Homepage> {
           ),
           items: [
             TabItemIcon(
-              iconData: Icons.arrow_back,
+              iconData: Icons.bedtime_sharp,
               curveColor: Colors.white,
             ),
             TabItemIcon(iconData: Icons.book, curveColor: Colors.white),

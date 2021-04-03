@@ -18,6 +18,10 @@ class MyApp extends StatelessWidget {
       initialData: null,
       value: AuthService().FirebaseUser,
       child: MaterialApp(
+        theme: ThemeData(
+          primaryColor: Colors.purpleAccent,
+          // accentColor: Colors.r,
+        ),
         home: Wrapper(),
       ),
     );

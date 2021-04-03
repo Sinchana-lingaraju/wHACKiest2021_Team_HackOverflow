@@ -46,6 +46,8 @@ dependencies:
   datetime_picker_formfield: ^1.0.0
   path: ^1.6.2
   url_launcher: ^6.0.3
+  flutter_signin_button: ^2.0.0
+  maps_launcher: ^2.0.0
   
 
   # The following adds the Cupertino Icons font to your application.
@@ -80,6 +82,31 @@ flutter:
     - assets/yash.jpeg
     - assets/sinchana.jpeg
     - assets/ishan.jpg
+    - assets/alpha.png
+    - assets/beta.png
+    - assets/theta.png
+    - assets/gamma.png
+    - assets/delta.png
+    - assets/smile.png
+    - assets/sad.png
+    - assets/angry.png
+    - assets/surprised.png
+    - assets/loving.png
+    - assets/scared.png
+    - assets/rick.jpeg
+    - assets/clean.png
+    - assets/date.png
+    - assets/eat.png
+    - assets/excercise.png
+    - assets/family.png
+    - assets/friends.png
+    - assets/gaming.png
+    - assets/movies.png
+    - assets/reading.png
+    - assets/relax.png
+    - assets/shop.png
+    - assets/sleeping.png
+    - assets/sports.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

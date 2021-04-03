@@ -34,7 +34,14 @@ class _LoginState extends State<Login> {
             child: ListView(
               children: <Widget>[
                 SizedBox(
-                  height: 40,
+                  height: 20,
+                ),
+                CircleAvatar(
+                  radius: 90,
+                  backgroundImage: AssetImage("assets/logo.png"),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 Container(
                     alignment: Alignment.center,
@@ -42,7 +49,7 @@ class _LoginState extends State<Login> {
                     child: Text(
                       'HackOverflow',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.purpleAccent,
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
                     )),
@@ -53,48 +60,87 @@ class _LoginState extends State<Login> {
                       'Log in. Breathe.',
                       style: TextStyle(fontSize: 20),
                     )),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: TextField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Email',
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                  child: TextField(
-                    obscureText: true,
-                    controller: passwordController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Password',
-                    ),
-                  ),
-                ),
                 SizedBox(
-                  height: 30.0,
+                  height: 20,
                 ),
-                Container(
-                    height: 50,
-                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                    child: ElevatedButton(
-                      // textColor: Colors.white,
-                      // color: Colors.blue,
-                      child: Text('Login'),
-                      onPressed: () async {
-                        print(nameController.text);
-                        print(passwordController.text);
-                        User user = await AuthService().signInWithEmail(
-                            email: nameController.text,
-                            password: passwordController.text);
-                        if (user != null)
-                          Navigator.pushReplacement(context,
-                              MaterialPageRoute(builder: (_) => Homepage()));
-                      },
-                    )),
+                TextFormField(
+                    decoration: InputDecoration(
+                        labelText: 'Email',
+                        labelStyle: TextStyle(color: Colors.purpleAccent),
+                        prefixIcon: Icon(
+                          Icons.person,
+                          color: Colors.purpleAccent,
+                        ),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50.0))),
+                    validator: (val) => val.isEmpty ? 'Enter an Email' : null,
+                    onChanged: (val) {
+                      setState(() => email = val);
+                    }),
+                SizedBox(
+                  height: 20.0,
+                ),
+                TextFormField(
+                    decoration: InputDecoration(
+                        labelText: 'Password',
+                        labelStyle: TextStyle(color: Colors.purpleAccent),
+                        prefixIcon: Icon(
+                          Icons.visibility_off,
+                          color: Colors.purpleAccent,
+                        ),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50.0))),
+                    validator: (val) => val.isEmpty ? 'Enter Password' : null,
+                    onChanged: (val) {
+                      setState(() => email = val);
+                    }),
+                SizedBox(
+                  height: 20.0,
+                ),
+                GestureDetector(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.purpleAccent,
+                        borderRadius: BorderRadius.circular(50.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'Login',
+                        style: TextStyle(color: Colors.white),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  onTap: () async {
+                    print(nameController.text);
+                    print(passwordController.text);
+                    User user = await AuthService().signInWithEmail(
+                        email: nameController.text,
+                        password: passwordController.text);
+                    if (user != null)
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (_) => Homepage()));
+                  },
+                ),
+                // Container(
+                //     height: 50,
+                //     //  color: Colors.purpleAccent,
+                //     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                //     child: ElevatedButton(
+                //       child: Text('Login'),
+                // onPressed: () async {
+                //   print(nameController.text);
+                //   print(passwordController.text);
+                //   User user = await AuthService().signInWithEmail(
+                //       email: nameController.text,
+                //       password: passwordController.text);
+                //   if (user != null)
+                //     Navigator.pushReplacement(context,
+                //         MaterialPageRoute(builder: (_) => Homepage()));
+                // },
+                //     )),
                 Container(
                     child: Row(
                   children: <Widget>[
@@ -102,7 +148,8 @@ class _LoginState extends State<Login> {
                     TextButton(
                       child: Text(
                         'Sign up',
-                        style: TextStyle(fontSize: 17),
+                        style:
+                            TextStyle(fontSize: 15, color: Colors.purpleAccent),
                       ),
                       onPressed: () {
                         Navigator.pushReplacement(context,

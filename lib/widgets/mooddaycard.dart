@@ -61,23 +61,23 @@ class _MoodDayState extends State<MoodDay> {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  widget.datetime ?? 'nothing',
+                  widget.datetime ?? ' ',
                   style: TextStyle(
                       fontStyle: FontStyle.normal,
                       fontWeight: FontWeight.bold,
                       fontSize: 15),
                 ),
                 SizedBox(width: 30),
-                IconButton(
-                    icon: Icon(Icons.delete),
-                    onPressed: () async {
-                      Provider.of<MoodCard>(context, listen: false).isloading =
-                          true;
-                      await Provider.of<MoodCard>(context, listen: false)
-                          .deletePlaces(widget.datetime);
-                      Provider.of<MoodCard>(context, listen: false).isloading =
-                          false;
-                    })
+                // IconButton(
+                //     icon: Icon(Icons.delete),
+                //     onPressed: () async {
+                //       Provider.of<MoodCard>(context, listen: false).isloading =
+                //           true;
+                //       await Provider.of<MoodCard>(context, listen: false)
+                //           .deletePlaces(widget.datetime);
+                //       Provider.of<MoodCard>(context, listen: false).isloading =
+                //           false;
+                //     })
               ],
             ),
             Expanded(
@@ -112,7 +112,7 @@ class _MoodDayState extends State<MoodDay> {
                         return Row(
                           children: <Widget>[
                             Text(
-                              widget.b[index] ?? 'nothinng',
+                              widget.b[index] ?? 'nothing',
                               style: TextStyle(
                                   fontStyle: FontStyle.normal,
                                   fontWeight: FontWeight.bold,

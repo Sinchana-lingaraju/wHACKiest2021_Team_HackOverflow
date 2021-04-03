@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:whackiest/helpers/db_helper.dart';
@@ -21,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ? Center(child: CircularProgressIndicator())
         : Scaffold(
             appBar: AppBar(
-              title: Text('Your Moods'),
-              backgroundColor: Colors.red,
+              // title: Text('Your Moods'),
+              backgroundColor: Colors.purpleAccent,
               actions: <Widget>[
                 IconButton(
                     icon: Icon(Icons.show_chart),

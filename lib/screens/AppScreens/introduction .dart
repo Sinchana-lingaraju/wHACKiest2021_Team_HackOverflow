@@ -83,36 +83,37 @@ class _IntroductionState extends State<Introduction> {
       // ),
       pages: [
         PageViewModel(
-          title: "Fractional shares",
+          title: "BINAURAL BEATS",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
+              "Regulate your sleep and wakefulness by listening to a range of binaural beats. Helps in getting into a particular headspace. Be it creative and relaxed, or alert and wakeful.",
           image: _buildImage('owl.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Learn as you go",
+          title: "YOUR PERSONAL JOURNAL",
           body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
+              "Knowing what you're feeling and why you're feeling it is extremely helpful.",
           image: _buildImage('diary.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
+          title: "WHOLESOME NEWS",
           body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
+              "These are tough times, but you're in control of what media you consume! A feed of only wholesome news from all around the world, brought direc r/UpliftingNews subreddit",
           image: _buildImage('newspaper.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Fractional shares",
+          title: "COVID NEGATVE",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
+              "Be informed only when covid cases in the area drop. Constant source of reassurance and relief.",
           image: _buildImage('virus.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Another title page",
-          body: "Another beautiful body text for this example onboarding",
+          title: "MUSIC",
+          body:
+              "Play a ramdom song from a list of curated tracks which would only make you feel good.",
           image: _buildImage('music.png'),
           // footer: ElevatedButton(
           //   onPressed: () {
@@ -151,9 +152,8 @@ class _IntroductionState extends State<Introduction> {
         //   reverse: true,
         // ),
         PageViewModel(
-          title: "Fractional shares",
-          body:
-              "Instead of having to buy an entire share, invest any amount you want.",
+          title: "PROGRESS",
+          body: "Track your mood everyday in your journal and <graph>",
           image: _buildImage('stnks.png'),
           decoration: pageDecoration,
         ),
@@ -164,9 +164,17 @@ class _IntroductionState extends State<Introduction> {
       skipFlex: 0,
       nextFlex: 0,
       //rtl: true, // Display as right-to-left
-      skip: const Text('Skip'),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+      skip: const Text(
+        'Skip',
+        style: TextStyle(color: Colors.purpleAccent),
+      ),
+      next: const Icon(
+        Icons.arrow_forward,
+        color: Colors.purpleAccent,
+      ),
+      done: const Text('Done',
+          style: TextStyle(
+              fontWeight: FontWeight.w600, color: Colors.purpleAccent)),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb

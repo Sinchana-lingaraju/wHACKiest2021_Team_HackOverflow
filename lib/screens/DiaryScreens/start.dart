@@ -5,6 +5,7 @@ import 'package:whackiest/models/mood.dart';
 import 'package:whackiest/models/moodcard.dart';
 import 'package:whackiest/widgets/activity.dart';
 import 'package:whackiest/widgets/moodicon.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
 class StartPage extends StatefulWidget {
   @override
@@ -71,20 +72,44 @@ class _StartPageState extends State<StartPage> {
                       radius: 27,
                       child: CircleAvatar(
                           child: Icon(Icons.dashboard,
-                              color: Colors.green, size: 30),
+                              color: Colors.purpleAccent, size: 30),
                           radius: 25,
                           backgroundColor: Colors.white),
-                      backgroundColor: Colors.green,
+                      backgroundColor: Colors.purpleAccent,
                     ),
                     SizedBox(height: 2.5),
                     Text('Dashboard',
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            color: Colors.green,
+                            color: Colors.purpleAccent,
                             fontSize: 15))
                   ],
                 ),
               ),
+              // GestureDetector(
+              //   onTap: () {
+              //     Navigator.of(context).pushNamed('/chart');
+              //   },
+              //   child: Column(
+              //     children: [
+              //       CircleAvatar(
+              //         radius: 27,
+              //         child: CircleAvatar(
+              //             child: Icon(Icons.show_chart,
+              //                 color: Colors.purpleAccent, size: 30),
+              //             radius: 25,
+              //             backgroundColor: Colors.white),
+              //         backgroundColor: Colors.purpleAccent,
+              //       ),
+              //       SizedBox(height: 2.5),
+              //       Text('Chart',
+              //           style: TextStyle(
+              //               fontWeight: FontWeight.w500,
+              //               color: Colors.purpleAccent,
+              //               fontSize: 15))
+              //     ],
+              //   ),
+              // ),
               GestureDetector(
                 onTap: () {
                   showDatePicker(
@@ -111,10 +136,10 @@ class _StartPageState extends State<StartPage> {
                       radius: 27,
                       child: CircleAvatar(
                           child: Icon(Icons.calendar_today,
-                              color: Colors.blue, size: 30),
+                              color: Colors.purpleAccent, size: 30),
                           radius: 25,
                           backgroundColor: Colors.white),
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.purpleAccent,
                     ),
                     SizedBox(
                       height: 2.5,
@@ -122,7 +147,7 @@ class _StartPageState extends State<StartPage> {
                     Text('Pick a date',
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            color: Colors.blue,
+                            color: Colors.purpleAccent,
                             fontSize: 15))
                   ],
                 ),
@@ -141,10 +166,11 @@ class _StartPageState extends State<StartPage> {
                     CircleAvatar(
                       radius: 27,
                       child: CircleAvatar(
-                          child: Icon(Icons.timer, color: Colors.red, size: 30),
+                          child: Icon(Icons.timer,
+                              color: Colors.purpleAccent, size: 30),
                           radius: 25,
                           backgroundColor: Colors.white),
-                      backgroundColor: Colors.red,
+                      backgroundColor: Colors.purpleAccent,
                     ),
                     SizedBox(
                       height: 2.5,
@@ -152,7 +178,7 @@ class _StartPageState extends State<StartPage> {
                     Text('Pick a time',
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            color: Colors.red,
+                            color: Colors.purpleAccent,
                             fontSize: 15))
                   ],
                 ),
@@ -163,16 +189,16 @@ class _StartPageState extends State<StartPage> {
           height: 30,
           width: 30,
           child: FloatingActionButton(
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.purpleAccent,
             child: Icon(Icons.done),
             onPressed: () => setState(() {
               datetime = datepicked + '   ' + timepicked;
             }),
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 30),
         Text('WHAT YOU FEELING NOW?',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
         SizedBox(height: 6),
         Text('(Tap to Select and Tap again to deselect!)',
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
@@ -215,7 +241,7 @@ class _StartPageState extends State<StartPage> {
               }),
         ),
         Text('WHAT YOU HAVE BEEN DOING?',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
         SizedBox(height: 10),
         Text('Hold on the activity to select,You can choose multiple',
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
@@ -287,10 +313,14 @@ class _StartPageState extends State<StartPage> {
               ],
             ),
             decoration: BoxDecoration(
-              color: Color(0xffff3d00),
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [Colors.purpleAccent, Colors.deepPurpleAccent],
+              ),
               border: Border.all(
                 width: 1.00,
-                color: Color(0xffff3d00),
+                color: Colors.deepPurpleAccent,
               ),
               borderRadius: BorderRadius.circular(19.00),
             ),

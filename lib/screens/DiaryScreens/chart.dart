@@ -128,46 +128,45 @@ class _MoodChartState extends State<MoodChart> {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: Text('Mood Graph'), backgroundColor: Colors.red),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         children: <Widget>[
-          SizedBox(
-            height: 108,
-            width: 300,
-            child: GridView.count(
-              crossAxisCount: 3,
-              childAspectRatio: (300 - 30) / (108 - 30),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-              children: List.generate(
-                  6,
-                  (index) => MyMoodCard(
-                        Text(
-                          "${index + 1} - ${[
-                            'Angry',
-                            'Happy',
-                            'Sad',
-                            'Surprised',
-                            'Loving',
-                            'Scared'
-                          ][index]}",
-                          textAlign: TextAlign.center,
-                        ),
-                        direction: 1,
-                      )),
-            ),
-          ),
-          Container(
-            height: 200,
-            child: MyMoodCard(
-              charts.BarChart(
-                series,
-                animate: true,
-              ),
-            ),
-          ),
+          // SizedBox(
+          //   height: 108,
+          //   width: 300,
+          //   child: GridView.count(
+          //     crossAxisCount: 3,
+          //     childAspectRatio: (300 - 30) / (108 - 30),
+          //     crossAxisSpacing: 10,
+          //     mainAxisSpacing: 10,
+          //     padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+          //     children: List.generate(
+          //         6,
+          //         (index) => MyMoodCard(
+          //               Text(
+          //                 "${index + 1} - ${[
+          //                   'Angry',
+          //                   'Happy',
+          //                   'Sad',
+          //                   'Surprised',
+          //                   'Loving',
+          //                   'Scared'
+          //                 ][index]}",
+          //                 textAlign: TextAlign.center,
+          //               ),
+          //               direction: 1,
+          //             )),
+          //   ),
+          // ),
+          // Container(
+          //   height: 200,
+          //   child: MyMoodCard(
+          //     charts.BarChart(
+          //       series,
+          //       animate: true,
+          //     ),
+          //   ),
+          // ),
           Container(
             height: 30,
           ),
