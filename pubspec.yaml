@@ -34,6 +34,10 @@ dependencies:
   flutter_snake_navigationbar:
   jumping_bottom_nav_bar: ^0.1.0
   heatmap_calendar: ^1.2.8
+  wave: ^0.2.0
+  audioplayers: ^0.18.3
+  syncfusion_flutter_sliders: ^19.1.54-beta
+  firebase_storage: ^8.0.1
   
 
   # The following adds the Cupertino Icons font to your application.
