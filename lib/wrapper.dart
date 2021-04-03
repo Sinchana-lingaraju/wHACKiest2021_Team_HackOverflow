@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:whackiest/screens/AppScreens/homepage.dart';
+import 'package:whackiest/screens/AppScreens/introduction%20.dart';
 
 class Wrapper extends StatefulWidget {
   Wrapper({Key key}) : super(key: key);
@@ -18,6 +19,6 @@ class _WrapperState extends State<Wrapper> {
     // if (user == null)
     //   return Login();
     // else {
-    return Homepage();
+    return Introduction();
   }
 }
