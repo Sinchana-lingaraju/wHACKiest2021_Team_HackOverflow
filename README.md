@@ -26,3 +26,5 @@ It's a mental health improvement health having the following functionalities.
 - Covid Section: Google Maps integration enables user to find vaccine centres nearest to them.
 - Random Music Player: Play a random uplifting song from a list of curated songs everytime the play button is hit.
 - Chat: To Be Implemented
+
+Drive link for APK and demo video: https://drive.google.com/drive/folders/1GGCScv3ffP6jYWLd8TbeHHB5x2K8CS4w?usp=sharing
