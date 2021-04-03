@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:jumping_bottom_nav_bar/jumping_bottom_nav_bar.dart';
+import 'package:whackiest/screens/AppScreens/about.dart';
 import 'package:whackiest/screens/AppScreens/covid.dart';
 import 'package:whackiest/screens/AppScreens/log.dart';
 import 'package:whackiest/screens/AppScreens/music.dart';
 import 'package:whackiest/screens/AppScreens/news.dart';
+import 'package:whackiest/screens/AppScreens/progress.dart';
 import 'package:whackiest/screens/AppScreens/sleep.dart';
-//import 'package:kf_drawer/kf_drawer.dart';
-
-//import 'package:flurry_navigation/flurry_navigation.dart';
+import 'package:whackiest/screens/AppScreens/volunteer.dart';
 
 class Homepage extends StatefulWidget {
   Homepage({Key key}) : super(key: key);
@@ -28,6 +28,74 @@ class _HomepageState extends State<Homepage> {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+        appBar: AppBar(
+          title: Text(""),
+          backgroundColor: Colors.purpleAccent,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage("assets/logo.png"),
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+              ),
+              ListTile(
+                  title: Text('PROGRESS'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => progress()),
+                    );
+                  }),
+              Divider(
+                thickness: 1,
+                color: Colors.grey,
+              ),
+              ListTile(
+                  title: Text('VOLUNTEER'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Volunteer()),
+                    );
+                  }),
+              Divider(
+                thickness: 1,
+                color: Colors.grey,
+              ),
+              ListTile(
+                  title: Text('ABOUT'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => About()),
+                    );
+                  }),
+              Divider(
+                thickness: 1,
+                color: Colors.grey,
+              ),
+              ListTile(
+                  title: Text('LOG OUT'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => progress()),
+                    );
+                  }),
+              Divider(
+                thickness: 1,
+                color: Colors.grey,
+              ),
+            ],
+          ),
+        ),
         body: TabBarView(
           children: [
             new Container(

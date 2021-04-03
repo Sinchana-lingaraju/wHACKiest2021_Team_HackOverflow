@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'package:whackiest/screens/AppScreens/homepage.dart';
 import 'package:whackiest/services/authService.dart';
 import 'package:whackiest/wrapper.dart';
 
@@ -19,10 +18,6 @@ class MyApp extends StatelessWidget {
       initialData: null,
       value: AuthService().FirebaseUser,
       child: MaterialApp(
-        title: 'Campus Monk 2.0',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
         home: Wrapper(),
       ),
     );
