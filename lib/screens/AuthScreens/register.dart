@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:whackiest/screens/AppScreens/homepage.dart';
+import 'package:whackiest/screens/AppScreens/introduction%20.dart';
 import 'package:whackiest/services/authService.dart';
 
 import 'login.dart';
@@ -93,10 +94,8 @@ class _RegisterState extends State<Register> {
                       User user = await _auth.createUserWithEmailAndPAss(
                           email: email, password: password);
                       if (user != null) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Homepage()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => intro()));
                       }
                     },
                     child: Text("Submit")),
@@ -108,7 +107,7 @@ class _RegisterState extends State<Register> {
                     await _auth.googleSignin().then((value) {
                       if (value.emailVerified)
                         Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (_) => Homepage()));
+                            MaterialPageRoute(builder: (_) => intro()));
                     });
                   },
                   child: Text("Sign up using google"),

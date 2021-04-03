@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:whackiest/screens/AppScreens/homepage.dart';
+import 'package:whackiest/screens/AppScreens/introduction%20.dart';
 import 'package:whackiest/screens/AuthScreens/resgister.dart';
 //import 'package:whackiest/screens/AuthScreens/register.dart';
 import 'package:whackiest/services/authService.dart';
@@ -120,8 +121,8 @@ class _LoginState extends State<Login> {
                         email: nameController.text,
                         password: passwordController.text);
                     if (user != null)
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (_) => Homepage()));
+                      Navigator.pushReplacement(
+                          context, MaterialPageRoute(builder: (_) => intro()));
                   },
                 ),
                 // Container(
