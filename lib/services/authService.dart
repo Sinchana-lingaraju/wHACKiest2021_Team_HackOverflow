@@ -60,4 +60,33 @@ class AuthService {
     print("\n\n\n" + user.toString() + "\n\n\n");
     return currentUser;
   }
+
+  Future<User> createUserWithEmailAndPAss(
+      {String email, String password}) async {
+    try {
+      UserCredential result = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      User user = result.user;
+      print("\n\n\n" + user.toString());
+
+      if (user != null) return user;
+    } catch (e) {
+      print("\n\n\n" + e.toString());
+      return null;
+    }
+  }
+
+  Future<User> signInWithEmail({String email, String password}) async {
+    try {
+      UserCredential authResult = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      User user = authResult.user;
+      print(user);
+
+      return user;
+    } catch (e) {
+      print("Sign In failed\n\n\n");
+      return null;
+    }
+  }
 }

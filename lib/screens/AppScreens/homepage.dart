@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:jumping_bottom_nav_bar/jumping_bottom_nav_bar.dart';
 import 'package:whackiest/screens/AppScreens/about.dart';
@@ -8,6 +9,8 @@ import 'package:whackiest/screens/AppScreens/news.dart';
 import 'package:whackiest/screens/AppScreens/progress.dart';
 import 'package:whackiest/screens/AppScreens/sleep.dart';
 import 'package:whackiest/screens/AppScreens/volunteer.dart';
+import 'package:whackiest/screens/AuthScreens/login.dart';
+import 'package:whackiest/services/authService.dart';
 
 class Homepage extends StatefulWidget {
   Homepage({Key key}) : super(key: key);
@@ -83,11 +86,11 @@ class _HomepageState extends State<Homepage> {
               ),
               ListTile(
                   title: Text('LOG OUT'),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => progress()),
-                    );
+                  onTap: () async {
+                    User user = await AuthService().signOut();
+                    if (user == null)
+                      Navigator.pushReplacement(
+                          context, MaterialPageRoute(builder: (_) => Login()));
                   }),
               Divider(
                 thickness: 1,
